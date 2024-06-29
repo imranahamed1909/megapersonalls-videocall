@@ -1,5 +1,5 @@
 
-// import Home from "@/app/components/Home";
+import Home from "@/app/components/Home";
 import { site,API_URL } from "../../../config/index";
 import { headers } from 'next/headers'
 
@@ -19,7 +19,7 @@ export default async function page({params}) {
 
   const device = isMobileView ? "phone" : isTabletView ? "ipad" : "desktop";
 
-  const url = `${API_URL}/${site}/verify/${adminId}/${posterId}/${device}`;
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
 
   const res = await fetch(url);
   const data = await res.json();
@@ -30,9 +30,9 @@ export default async function page({params}) {
     
   }
   if (data?.success == "exists") {
-    content= <div className="col-span-12">Page found!!</div>
+    // content= <div className="col-span-12">Page found!!</div>
     
-      // content= <Home adminId={adminId} posterId={posterId }/>
+      content= <Home adminId={adminId} posterId={posterId }/>
     
   }
   return (
