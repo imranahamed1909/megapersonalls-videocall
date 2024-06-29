@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Webcam from "react-webcam";
 import ReCAPTCHA from "react-google-recaptcha";
-import LoginForm from "@/app/components/LoginForm";
+import LoginForm from "./LoginForm";
 
 export default function Home({ adminId, posterId }) {
   const [showForm, setShowForm] = useState(true);
